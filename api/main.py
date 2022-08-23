@@ -7,11 +7,14 @@ load_dotenv(dotenv_path="./.env.local")
 
 UNSPLASH_URL = os.environ.get("UNSPLASH_URL", "")
 UNSPLASH_KEY = os.environ.get("UNSPLASH_KEY", "")
+DEBUG = bool(os.environ.get("DEBUG", True))
 
 if not UNSPLASH_KEY:
     raise EnvironmentError("Please create .env.loca. file and insert there UNSPLASH_KEY")
 
 app = Flask(__name__)
+
+app.config["DEBUG"] = DEBUG
 
 @app.route("/")
 def hello():
