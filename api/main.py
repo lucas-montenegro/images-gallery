@@ -20,7 +20,7 @@ app.config["DEBUG"] = DEBUG
 
 @app.route("/")
 def hello():
-    return "Hello, World!"
+    return "Hello, World !!!!!!!!!!!!"
 
 @app.route("/new-image")
 def new_image():
